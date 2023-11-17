@@ -1,41 +1,51 @@
+// React ve gerekli bileşenleri import et
 import React, { useState } from 'react';
 import { View, StyleSheet, Image, Dimensions, TouchableOpacity, Text } from 'react-native'
 import { Input } from 'react-native-elements';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase';
-// import Icon from 'react-native-vector-icons/FontAwesome';
-// import {LinearGradient} from 'react-native-linear-gradient';
-// import { Button, ButtonGroup, withTheme, Text } from '@rneui/themed';
 
-
+// Login bileşeni
 const Login = ({ navigation }) => {
+    // Kullanıcının girdiği e-posta ve şifreyi tutacak state'leri tanımla
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    // Ekran boyutlarını al
     const dimensions = Dimensions.get('window');
     const imageWidth = dimensions.width;
 
+    // Kayıt ekranını açacak fonksiyon
     const openRegisterScreen = () => {
         navigation.navigate('Register');
     };
 
+    // Giriş yapacak fonksiyon
     const signin = () => {
+        // Firebase Authentication servisi kullanarak e-posta ve şifre ile giriş yap
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
+                // Giriş başarılı olduğunda kullanıcı ID'sini logla ve ana sekme ekranına yönlendir
                 console.log(userCredential.user.uid)
                 navigation.navigate('MyTab', { user_id: userCredential.user.uid });
             })
             .catch((error) => {
+                // Giriş hatası durumunda hata mesajını logla ve kullanıcıya uyarı göster
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 alert(errorMessage);
             });
     };
 
+    // JSX döndüren render fonksiyonu
     return (
         <View style={styles.container}>
+            {/* Giriş ekranının üst kısmında bulunan görsel */}
             <Image source={require('../assets/hero.jpg')} style={{ width: imageWidth, height: 270, marginBottom: 30 }} />
 
+            {/* Giriş ekranının içeriği */}
             <View style={styles.smallScreen}>
+                {/* E-posta ve şifre girişi için Input bileşenleri */}
                 <Input
                     placeholder='Enter your email'
                     label='Email'
@@ -51,11 +61,10 @@ const Login = ({ navigation }) => {
                     onChangeText={text => setPassword(text)}
                     secureTextEntry
                 />
+
+                {/* Giriş yap butonu */}
                 <TouchableOpacity
-                    onPress={() => {
-                        signin();
-                    }
-                    }
+                    onPress={() => signin()}
                     style={{
                         backgroundColor: '#414242',
                         paddingHorizontal: 5,
@@ -68,11 +77,10 @@ const Login = ({ navigation }) => {
                         textAlign: 'center', color: '#FFFFFF', fontSize: 18
                     }}>Sign in</Text>
                 </TouchableOpacity>
+
+                {/* Kayıt ol butonu */}
                 <TouchableOpacity
-                    onPress={() => {
-                        openRegisterScreen();
-                    }
-                    }
+                    onPress={() => openRegisterScreen()}
                     style={{
                         backgroundColor: '#4E50F7',
                         paddingHorizontal: 5,
@@ -87,6 +95,8 @@ const Login = ({ navigation }) => {
         </View>
     )
 }
+
+// Stilleri tanımla
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -108,8 +118,8 @@ const styles = StyleSheet.create({
         borderRadius: 4,
         borderTopLeftRadius: 40,
         borderTopRightRadius: 40,
-
     }
 });
 
+// Login bileşenini dışa aktar
 export default Login;
