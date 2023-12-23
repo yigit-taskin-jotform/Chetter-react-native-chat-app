@@ -73,9 +73,9 @@ const ExploreScreen = ({ navigation, route }) => {
         <Fragment>
             <SafeAreaView style={{ flex: 0, backgroundColor: '#FFFFFF' }} />
             {/* <SafeAreaView style={{flex: 1 }}> */}
-            <View style={{ backgroundColor: '#E5EAFD', flex: 1, alignItems: 'center' }}>
+            <View style={{ backgroundColor: '#94B9FF', flex: 1, alignItems: 'center' }}>
                 <Image source={require('../assets/Explore_hero.jpg')} style={{ width: imageWidth, height: 270, marginBottom: 15, marginTop: 0 }} />
-                <Text style={{ marginVertical: 20, fontWeight: '800' }} >SWIPE to find who is your FRIEND</Text>
+                <Text style={{ marginVertical: 20, fontWeight: '800' }} >ARKADAŞINIZI eklemek için KAYDIRIN</Text>
 
                 <View style={styles.container}>
                     <SwipeListView
@@ -84,7 +84,7 @@ const ExploreScreen = ({ navigation, route }) => {
                         maxToRenderPerBatch={5}
                         renderItem={(data, rowMap) => (
                             <View style={styles.rowFront}>
-                                <Text>I am {data.item.name} </Text>
+                                <Text>Merhaba ben {data.item.name} </Text>
                                 <Image source={{ uri: data.item.avatar }} style={{ width: 50, height: 50, }} />
 
                             </View>
@@ -95,13 +95,13 @@ const ExploreScreen = ({ navigation, route }) => {
                                     style={[styles.backRightBtn, styles.backLeftBtn]}
                                     onPress={() => deleteRow(rowMap, data.item.key)}
                                 >
-                                    <Text style={styles.backTextWhite}>No...</Text>
+                                    <Text style={styles.backTextWhite}>Sil...</Text>
                                 </TouchableOpacity>
                                 <TouchableOpacity
                                     style={[styles.backRightBtn, styles.backRightBtnLeft]}
                                     onPress={() => closeRow(rowMap, data.item.key)}
                                 >
-                                    <Text style={styles.backTextWhite}>Be My Friend</Text>
+                                    <Text style={styles.backTextWhite}>Ekle</Text>
                                 </TouchableOpacity>
 
                             </View>
@@ -120,7 +120,7 @@ const ExploreScreen = ({ navigation, route }) => {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#E5EAFD',
+        backgroundColor: '#94B9FF',
         flex: 1,
         width: '90%'
 

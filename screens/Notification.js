@@ -85,19 +85,19 @@ const NotificationScreen = ({ navigation, route }) => {
               <View style={styles.item}>
                 <Image source={{ uri: item.avatar }} style={styles.itemImage} />
                 <View style={styles.itemContent}>
-                  <Text style={styles.itemName}>{item.name} Want to be your friend</Text>
+                  <Text style={styles.itemName}>{item.name}, senin arkadaşın olmak istiyor</Text>
                   <View style={styles.buttons}>
                     <TouchableOpacity style={styles.button} onPress={() => {
                       acceptAction(item.uid)
                       navigation.navigate('Chat', { name: item.name, uid: item.uid })
                     }} >
-                      <Text style={styles.buttonText}>Yes, SURE</Text>
+                      <Text style={styles.buttonText}>Evet, tabiki</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.button} onPress={() => {
                       // acceptAction(item.uid)
                       rejectAction(item.uid)
                     }}>
-                      <Text style={styles.buttonText}>No, Bye</Text>
+                      <Text style={styles.buttonText}>Hayır, Bye</Text>
                     </TouchableOpacity>
                   </View>
                 </View>

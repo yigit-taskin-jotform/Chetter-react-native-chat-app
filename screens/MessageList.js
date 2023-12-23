@@ -24,54 +24,8 @@ import {
 const MessageScreen = ({ navigation, route }) => {
   const dimensions = Dimensions.get('window');
   const imageWidth = dimensions.width;
-  // const [users, setUsers] = useState(null)
-
-  // const getUsers = async ()=> {
-  //     var userList = []
-  //     console.log(route.params.user_id)
-  //     const q = query(collection(db, 'users'), where('uid','!=',route.params.user_id));
-  //     console.log(q);
-  //     const querySnapshot = await getDocs(q);
-  //     querySnapshot.forEach((doc) => {
-  //         userList.push(doc.data())
-  //     console.log(doc.id, " => ", doc.data());
-  //     });
-  //     console.log(userList);
-  //     setUsers(userList)
-  // }
-
-  // useEffect(()=>{
-  //     getUsers()
-  //   },[])
-
-
-
   const [notiUsers, setNotiUsers] = useState([])
   const [Users, setUsers] = useState([])
-
-  // const getNotiUser = async ()=> {
-  //     const q = query(doc(db, "users", route.params.user_id));
-  //     const unsubscribe = onSnapshot(q, (snapshot) => {
-  //       var userList1 = []
-  //       console.log(snapshot.data());
-  //       if (snapshot.data().realFriend.length > 0){
-  //         snapshot.data().realFriend.forEach(
-  //           (uid) =>
-  //           {
-  //             const docRef1 = doc(db, "users", uid);
-  //             const _unsubscribe = onSnapshot(docRef1, (snapshot) => {
-  //               userList1.push(snapshot.data())
-  //             console.log(snapshot.data());
-  //             }) })}
-  //       setNotiUsers(userList1)
-
-  //     })
-
-  //   }
-
-  // useEffect(()=>{
-  //     getNotiUser();
-  //   },[navigation])
 
   useEffect(() => {
     const getUserContacts = () => {
@@ -86,19 +40,14 @@ const MessageScreen = ({ navigation, route }) => {
         setNotiUsers(contactDetails);
       })
     }
-
-
     getUserContacts();
   }, [navigation])
 
 
-
-
-
   return (
     <Fragment>
-      <SafeAreaView style={{ flex: 0, backgroundColor: '#F8AF00' }} />
-      <View style={{ backgroundColor: '#F8B000', flex: 1, alignItems: 'center' }}>
+      <SafeAreaView style={{ flex: 0, backgroundColor: '#FFDE59' }} />
+      <View style={{ backgroundColor: '#FFDE59', flex: 1, alignItems: 'center' }}>
         <Image source={require('../assets/chat_hero.jpg')} style={{ width: imageWidth, height: 270, marginBottom: 15, marginTop: 0 }} />
 
         <View>
@@ -135,6 +84,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
   },
   card: {
+    backgroundColor: '#F4F8FF',
+    paddingVertical: 10,
+    //paddingHorizontal: 10,
+    borderRadius: 50,
     width: '100%',
     height: 'auto',
     marginHorizontal: 4,
@@ -166,8 +119,6 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     width: 300,
     backgroundColor: 'transparent',
-    borderBottomWidth: 1,
-    borderBottomColor: '#cccccc',
   },
   userText: {
     flexDirection: 'row',
@@ -175,8 +126,7 @@ const styles = StyleSheet.create({
   },
   nameText: {
     fontSize: 14,
-    fontWeight: '900',
-    fontFamily: 'Verdana'
+    fontWeight: '900'
   },
   msgTime: {
     textAlign: 'right',

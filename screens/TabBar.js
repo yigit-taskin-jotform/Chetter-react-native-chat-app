@@ -72,7 +72,7 @@ export default function MyTabs({ route, navigation }) {
         options={() => ({
           headerBackVisible: false,
           headerShown: false,
-          tabBarLabel: 'Explore',
+          tabBarLabel: 'Arkadaş Keşfet',
           tabBarIcon: ({ color, size }) => (
             <MaterialIcons name="explore" color={color} size={size} />
           ),
@@ -83,7 +83,7 @@ export default function MyTabs({ route, navigation }) {
         options={() => ({
           headerBackVisible: false,
           headerShown: false,
-          tabBarLabel: 'Chat',
+          tabBarLabel: 'Mesajlar',
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="chatbubbles-sharp" color={color} size={size} />
           ),
@@ -94,7 +94,7 @@ export default function MyTabs({ route, navigation }) {
         options={() => ({
           headerBackVisible: false,
           headerShown: false,
-          tabBarLabel: 'Notification',
+          tabBarLabel: 'Bildirimler',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="bell" color={color} size={size} />
           ),
