@@ -76,20 +76,20 @@ const Register = ({ navigation }) => {
                 <View style={styles.smallScreen}>
                     {/* Kullanıcı adı, email ve şifre için Input bileşenlerini ekle */}
                     <Input
-                        placeholder='Enter your name'
-                        label='Name'
+                        placeholder='Adınızı girin'
+                        label='Adınız'
                         value={name}
                         onChangeText={text => setName(text)}
                     />
                     <Input
-                        placeholder='Enter your email'
+                        placeholder='Email adresinizi girin'
                         label='Email'
                         value={email}
                         onChangeText={text => setEmail(text)}
                     />
                     <Input
-                        placeholder='Enter your password'
-                        label='Password'
+                        placeholder='Şifrenizi girin'
+                        label='Şifre'
                         value={password} onChangeText={text => setPassword(text)}
                         secureTextEntry
                     />
@@ -110,7 +110,7 @@ const Register = ({ navigation }) => {
                             }}>
                             <Text style={{
                                 textAlign: 'center', color: '#FFFFFF'
-                            }}>Generating Your Avatar</Text>
+                            }}>Rastgele Avatar Oluşturun</Text>
                         </TouchableOpacity>
                     </View>
 
@@ -128,7 +128,7 @@ const Register = ({ navigation }) => {
                         }}>
                         <Text style={{
                             textAlign: 'center', color: '#FFFFFF', fontSize: 18
-                        }}>Register</Text>
+                        }}>Kayıt Ol</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
                         onPress={() => {
@@ -142,7 +142,7 @@ const Register = ({ navigation }) => {
                         }}>
                         <Text style={{
                             textAlign: 'center', color: '#FFFFFF', fontSize: 18
-                        }}>Back</Text>
+                        }}>Geri</Text>
                     </TouchableOpacity>
 
                 </View>

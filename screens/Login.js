@@ -47,15 +47,15 @@ const Login = ({ navigation }) => {
             <View style={styles.smallScreen}>
                 {/* E-posta ve şifre girişi için Input bileşenleri */}
                 <Input
-                    placeholder='Enter your email'
+                    placeholder='Email Adresinizi Girin'
                     label='Email'
                     leftIcon={{ type: 'material', name: 'email' }}
                     value={email}
                     onChangeText={text => setEmail(text)}
                 />
                 <Input
-                    placeholder='Enter your password'
-                    label='Password'
+                    placeholder='Şifrenizi Girin'
+                    label='Şifre'
                     leftIcon={{ type: 'material', name: 'lock' }}
                     value={password}
                     onChangeText={text => setPassword(text)}
@@ -75,7 +75,7 @@ const Login = ({ navigation }) => {
                     }}>
                     <Text style={{
                         textAlign: 'center', color: '#FFFFFF', fontSize: 18
-                    }}>Sign in</Text>
+                    }}>Giriş Yap</Text>
                 </TouchableOpacity>
 
                 {/* Kayıt ol butonu */}
@@ -89,7 +89,7 @@ const Login = ({ navigation }) => {
                     }}>
                     <Text style={{
                         textAlign: 'center', color: '#FFFFFF', fontSize: 18
-                    }}>Register</Text>
+                    }}>Kayıt Ol</Text>
                 </TouchableOpacity>
             </View>
         </View>
