@@ -69,8 +69,6 @@ const Register = ({ navigation }) => {
             {/* SafeAreaView ile güvenli bir görüntüleme alanı oluştur */}
             <SafeAreaView style={{ flex: 0, backgroundColor: '#FFFFFF' }} />
             <View style={styles.container}>
-                {/* Arka plan görüntüsünü ekle */}
-                <Image source={require('../assets/joinus.jpg')} style={{ width: imageWidth, height: 270, marginBottom: 30 }} />
 
                 {/* Küçük ekran görünümü */}
                 <View style={styles.smallScreen}>
@@ -145,6 +143,8 @@ const Register = ({ navigation }) => {
                         }}>Geri</Text>
                     </TouchableOpacity>
 
+                {/* Arka plan görüntüsünü ekle */}
+                <Image source={require('../assets/joinus.jpg')} style={{ width: 0.9 * Dimensions.get('window').width, height: 200, marginTop: 5}} />
                 </View>
             </View>
         </Fragment>
@@ -168,6 +168,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFFFFF',
         paddingTop: 40,
         padding: 20,
+        marginTop: 50,
+        marginBottom: 10,
         alignItems: 'center',
         borderRadius: 4,
         borderTopLeftRadius: 40,

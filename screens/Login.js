@@ -40,9 +40,6 @@ const Login = ({ navigation }) => {
     // JSX döndüren render fonksiyonu
     return (
         <View style={styles.container}>
-            {/* Giriş ekranının üst kısmında bulunan görsel */}
-            <Image source={require('../assets/hero.jpg')} style={{ width: imageWidth, height: 270, marginBottom: 30 }} />
-
             {/* Giriş ekranının içeriği */}
             <View style={styles.smallScreen}>
                 {/* E-posta ve şifre girişi için Input bileşenleri */}
@@ -91,6 +88,7 @@ const Login = ({ navigation }) => {
                         textAlign: 'center', color: '#FFFFFF', fontSize: 18
                     }}>Kayıt Ol</Text>
                 </TouchableOpacity>
+                <Image source={require('../assets/hero.jpg')} style={{ width: 0.9 * Dimensions.get('window').width, height: 270, marginTop: 15 }} />
             </View>
         </View>
     )
@@ -113,6 +111,8 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#FFFFFF',
         paddingTop: 40,
+        marginTop: 80,
+        marginBottom: 10,
         padding: 20,
         alignItems: 'center',
         borderRadius: 4,
